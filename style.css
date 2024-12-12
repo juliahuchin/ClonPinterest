@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: box;
+
+}
+body{
+    background-color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+/*comentario*/
+header nav{
+    width: 98vw;
+    height: 80px;
+    font-size: 16px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; 
+    z-index: 1; /*Para organizar como en capas*/
+}
+#icono_pinterest{
+    width: 35px;
+    height: 35px;
+    padding: 4px;
+}
+#icono_pinterest:hover{
+    background-color: #e9e9e9;
+    border-radius: 150px;
+}
+.first-list{
+    display: flex;
+}
+.first-list li{
+     list-style: none;
+    padding: 14px 12px;
+}
+.first-list a{
+    text-decoration: none;
+    color:black;
+}
+#inicio{
+    background-color: black;
+    color: white;
+    padding: 14px 12px;
+    border-radius: 25px;
+}
+.buscar{ /*Para cambiar la apariencia de la cajita del buscador */
+    flex-grow: 1; /* */
+    height: 48px;
+    background-color: #e9e9e9;
+    border-radius: 30px;
+}
+.buscar:hover{ /*Para que cambie el color al acercar el mouse*/
+    background-color: #e1e1e1;
+}
+.buscar:focus-within{
+    border: 4px solid #7fc1ff; /* Para al clickear alrededor se quede marcado el buscador*/
+}
+.barra{ /*Para mandar llamar una clase= . */
+    display: flex; /*Se mete en una cajita de flexbox */
+    align-items: center;
+    height: 48px;
+}
+#lupa{ /*Para mandar llamar un id=# */
+    padding: 13px; /*Para despegar la lupa */
+    color: #767676;
+    font-size: 20px;
+    font-weight: bolder;/*Para resaltar la letra*/
+}
+.barra input{ /*Para modificar la barra del buscador*/
+    border: none;
+    background-color: inherit;
+    padding: 0px 8px 0px 0px;
+    font-size: 16px;
+    flex-grow: 1;
+    outline: none; /*Para que deje de aparecer la linea del cuadro de buscar*/
+}
+.right-items span{
+    padding: 8px;
+    color: #767676;
+    font-size: 28px;
+}
+.right-items span:hover{
+    background-color: #e9e9e9;
+    border-radius: 150px;
+    cursor: pointer; /*Para cambiar el cursor por los items a una manita*/
+}
+.contenido{
+    position: absolute;
+    margin-top: 80px;
+    width: 100%;
+}
+
+/* Duda de las columnas de imagenes ya modifique verifique que sean 5 columnas pero solo me muestra 4 */
+ .imagenes{ /* Quiere decir 5 columnas 240 pixeles*/
+    columns: 6 240px; /*Estos se modifican de acuerdo la pantalla si es mas hancha o no */
+    margin: auto;
+    margin-left: 3%;
+    margin-right: 4%;
+}
+.card-image{
+    position: relative;
+    padding: 6px;
+}
+.card-image img {
+    border-radius: 15px;
+    min-width: 240px; /*minimo pixeles*/
+    max-width: 240px; /*maximo pixeles */
+}
+.card-image:hover>:first-child{
+    filter:brightness(60%) ;
+}
+.card-image:hover> *{
+    visibility: visible;
+    display: inline;
+}
+.button{ /* Estilo al boton de las cards*/
+    position: absolute;
+    left: 65%;
+    top: 5%;
+    padding: 13px 5px; /*Para crecer el area del boton*/
+    background-color:  #e60023;
+    border-radius: 30px;
+    border: none;
+    visibility: hidden;
+}
+.button a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+.oculto1{
+    position: absolute;
+    left: 60%;
+    bottom: 15px;
+    background-color: white;
+    font-size: 30px;
+    padding: 2px;
+    border-radius: 30px;
+    visibility:hidden;
+    display:none;
+}
+.oculto2{
+    position: absolute;
+    left: 78%;
+    bottom: 15px;
+    background-color: white;
+    font-size: 30px;
+    padding: 2px;
+    border-radius: 30px;
+    visibility:hidden;
+    display:none;
+}
+/* Nueva actualizacion del codigo */
+@media (max-width: 1200px) {
+    .imagenes{
+        columns: 3 200px;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .card-image img{
+        border-radius: 15px;
+        min-width: 180px;
+        max-width: 200px;
+    }
+  }
+
+
+  @media (max-width: 450px) {
+    .imagenes{
+        columns: 2 180px;
+    }
+
+    .card-image img{
+        min-width: 100px;
+        max-width: 180px;
+    }
+  }
